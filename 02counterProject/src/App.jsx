@@ -10,8 +10,18 @@ function App() {
   const addValue = () => {
 
     console.log("clicked", counter);
-    counter = counter + 1;
-    setCounter(counter)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    
+
+  }
+
+  const subtractValue = () =>{
+
+    console.log("clicked", counter);
+    setCounter(counter - 1);
     
 
   }
@@ -23,7 +33,7 @@ function App() {
 
       <button onClick={addValue} >Add Value {counter}</button>
       <br />
-      <button>Subtract Value {counter}</button>
+      <button onClick={subtractValue}>Subtract Value {counter}</button>
 
       <p>Footer: {counter}</p>
 
