@@ -20,10 +20,13 @@ const currentDate = new Date();
 const year = currentDate.getFullYear();
 console.log(year);
 
+const imageLink = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS87g3RDKALdKYIfCXkEOhnlZvipSU9cLO7EQ&s"
+
 ReactDOM.render(
     <div>
         <p>Created by {yourname}</p>
         <p>CopyRight {year}</p>
+        <img src={imageLink} />
     </div>,
     document.getElementById('root')
 )
