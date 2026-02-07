@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 
 function CreateArea(props) {
+
   const [note, setNote] = useState({
-    title:"",
-    textArea: ""
+    title: "",
+    content: ""
   })
 
-  function handleChange(event){
-    const {name, value} = event.target
-    // console.log(event.target.name);
+  function handleChange(e){
+    const {name, value} = e.target
     setNote((prevNote) =>{
       return {
         ...prevNote,
@@ -17,17 +17,21 @@ function CreateArea(props) {
     })
   }
 
-  function submitNote(e){
-    e.preventDefault()
+  function onSubmit(e){
+    e.preventDefault();
     props.onAdd(note)
+    setNote({
+      title: "",
+      content: ""
+    }) // Khali krdo
   }
-  
+
   return (
     <div>
       <form>
-        <input onChange={handleChange} name="title" placeholder="Title" value={note.title}/>
-        <textarea onChange={handleChange} name="content" placeholder="Take a note..." rows="3" value={note.content} />
-        <button onClick={submitNote}>Add</button>
+        <input onChange={handleChange} value={note.title} name="title" placeholder="Title" />
+        <textarea onChange={handleChange} value={note.content}  name="content" placeholder="Take a note..." rows="3" />
+        <button onClick={onSubmit} >Add</button>
       </form>
     </div>
   );
