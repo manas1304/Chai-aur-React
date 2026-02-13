@@ -1,0 +1,5 @@
+<a> tag is not used in major project since it triggers a refresh 
+so if the page has to reload then whole structure, DOM, html, css and everything will be painted again
+so then there wouldn't be any use of react for that functionality 
+since react makes sure only the changes are reloaded and the rest of the component stays the same.
+
